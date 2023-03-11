@@ -1,18 +1,66 @@
 <!DOCTYPE html>
+
 <head>
-  <title>OpenAI Quickstart</title>
-  <link
-    rel="shortcut icon"
-    href="{{ url_for('static', filename='dog.png') }}"
-  />
+  <title>Whiskey Name Generator</title>
+  <link rel="shortcut icon" href="{{ url_for('static', filename='whiskey_glass.png') }}" />
   <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+  <style>
+    body {
+      background-color: #1c1c1c;
+      color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+
+    h3 {
+      margin-top: 20px;
+      font-size: 28px;
+      color: #f0f0f0;
+    }
+
+    input[type="text"] {
+      width: 220px;
+      height: 30px;
+      padding: 5px;
+      font-size: 16px;
+      background-color: #2d2d2d;
+      border: none;
+      color: #f0f0f0;
+    }
+
+    input[type="submit"] {
+      width: 160px;
+      height: 40px;
+      margin-top: 10px;
+      font-size: 18px;
+      background-color: #4d4d4d;
+      border: none;
+      color: #f0f0f0;
+      cursor: pointer;
+    }
+
+    .result {
+      margin-top: 20px;
+      padding: 10px;
+      font-size: 20px;
+      background-color: #2d2d2d;
+      border: none;
+      color: #f0f0f0;
+    }
+
+    .icon {
+      margin: 20px;
+      width: 100px;
+      height: 100px;
+      filter: invert(1);
+    }
+  </style>
 </head>
 
 <body>
-  <img src="{{ url_for('static', filename='dog.png') }}" class="icon" />
-  <h3>Name my pet</h3>
+  <img src="{{ url_for('static', filename='whiskey_glass.png') }}" class="icon" />
+  <h3>Generate a whiskey name</h3>
   <form action="/" method="post">
-    <input type="text" name="animal" placeholder="Enter an animal" required />
+    <input type="text" name="animal" placeholder="word association suggestion" required />
     <input type="submit" value="Generate names" />
   </form>
   {% if result %}
